@@ -1,5 +1,6 @@
 import axios from 'axios';
 import qs from 'qs'
+import {Toast} from 'vant'
 
 // 全局配置
 // axios.defaults.headers.common["token"] = ""
@@ -16,11 +17,12 @@ axios.interceptors.response.use(function (response) {
   response.statusText = data.message;
   // 统一异常处理
   if(data.status !== 200){
-    alert(data.message);
+    Toast(data.message);
     return Promise.reject(data.message);
   }
   return response;
 }, function (error) {
+  Toast("网络异常")
   return Promise.reject(error);
 });
 
