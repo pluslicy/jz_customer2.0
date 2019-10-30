@@ -7,6 +7,10 @@ import Order from '../views/manager/Order'
 import User from '../views/manager/User'
 // 登录页面
 import Login from '../views/Login'
+import { getToken } from '../utils/auth'
+import { Toast } from 'vant'
+import store from '../store'
+
 
 Vue.use(VueRouter)
 
@@ -19,6 +23,20 @@ const routes = [
     path: '/manager',
     name: 'manager',
     component: Manager,
+    // beforeEnter: (to, from, next) => {
+    //   let token = getToken();
+    //   if(token){
+    //     // 查询info
+    //     store.dispatch('user/info',token)
+    //     .then(()=>{
+    //       next();
+    //     })
+    //   } else {
+    //     Toast("token失效1")
+    //     // 跳转到登录
+    //     next({path:'/login'})
+    //   }
+    // },
     children:[{
       path: 'home',
       component: Home,
@@ -28,6 +46,9 @@ const routes = [
     },{
       path: 'user',
       component: User,
+    },{
+      path: 'address',
+      component: ()=>import('../views/manager/address/Index') 
     }]
   },
   {

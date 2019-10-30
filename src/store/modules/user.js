@@ -27,9 +27,11 @@ export default {
     },
     // 通过token获取info
     async info(context,token){
+      console.log('info');
       let response = await get("/user/info",{token});
       // 将用户信息设置到info中
-      context.commit("refreshInfo",response.data)
+      await context.commit("refreshInfo",response.data)
+      console.log('info-end');
     },
     // 退出
     async logout(context){

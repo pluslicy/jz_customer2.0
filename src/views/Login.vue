@@ -7,7 +7,6 @@
       </div>
     </div>
     <div class="form">
-      {{form}}
       <van-cell-group>
         <van-field
           v-model="form.username"
@@ -17,7 +16,6 @@
           icon="question-o"
           placeholder="请输入用户名"
         />
-
         <van-field
           v-model="form.password"
           type="password"
@@ -26,8 +24,11 @@
           required
         />
       </van-cell-group>
-      <div style="text-align:center">
-       <van-button plain  type="default" @click="loginHandler">登录</van-button>
+      <div style="text-align:center;padding:1em" >
+       <van-button 
+        plain round 
+        @click="loginHandler" 
+        style="width:100%">登录</van-button>
       </div>
     </div>
   </div>
@@ -72,6 +73,7 @@ export default {
   color:#efefef;
   font-weight: bold;
   margin-bottom: 1em;
+  font-size: 1.5em
 }
 .header .title {
   font-size: 24px;

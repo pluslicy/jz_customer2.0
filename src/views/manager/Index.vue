@@ -15,11 +15,9 @@ import {mapState,mapActions} from 'vuex'
 export default {
   created(){
     if(this.token){
-      // 查询info
-      this.getInfo(this.token);
+      this.getInfo(this.token)
     } else {
       this.$toast("token失效")
-      // 跳转到登录
       this.$router.push({path:'/login'})
     }
   },
