@@ -27,3 +27,8 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+![avatar](http://134.175.154.93:8888/github/1.jpg)
+![avatar](http://134.175.154.93:8888/github/2.jpg)
+![avatar](http://134.175.154.93:8888/github/3.jpg)
+![avatar](http://134.175.154.93:8888/github/4.jpg)
+![avatar](http://134.175.154.93:8888/github/5.jpg)
