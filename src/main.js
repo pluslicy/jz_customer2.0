@@ -9,8 +9,10 @@ import './common.css'
 // 自定义组件
 import FullLayout from './components/FullLayout'
 import OrderItem from './components/OrderItem'
+import AddressItem from './components/AddressItem'
 Vue.component('briup-fulllayout',FullLayout)
 Vue.component('briup-order-item',OrderItem)
+Vue.component('briup-address-item',AddressItem)
 
 
 Vue.config.productionTip = false

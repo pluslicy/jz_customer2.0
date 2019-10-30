@@ -14,20 +14,13 @@
 import {mapState,mapActions} from 'vuex'
 export default {
   created(){
-    if(this.token){
-      this.getInfo(this.token)
-    } else {
-      this.$toast("token失效")
-      this.$router.push({path:'/login'})
-    }
+    
   },
   computed:{
-    ...mapState('user',['token','info'])
+    ...mapState('user',['info'])
   },
   methods:{
-    ...mapActions('user',{
-      'getInfo':'info'
-    })
+    
   }
 }
 </script>

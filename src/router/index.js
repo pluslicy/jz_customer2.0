@@ -23,20 +23,21 @@ const routes = [
     path: '/manager',
     name: 'manager',
     component: Manager,
-    // beforeEnter: (to, from, next) => {
-    //   let token = getToken();
-    //   if(token){
-    //     // 查询info
-    //     store.dispatch('user/info',token)
-    //     .then(()=>{
-    //       next();
-    //     })
-    //   } else {
-    //     Toast("token失效1")
-    //     // 跳转到登录
-    //     next({path:'/login'})
-    //   }
-    // },
+    beforeEnter: (to, from, next) => {  //属于路由自己的拦截器
+      let token = getToken();
+      if(token){
+        // 查询info
+        store.dispatch('user/info',token)
+        .then(()=>{
+          // 当获取万用户信息之后才允许跳转
+          next();
+        })
+      } else {
+        Toast("token失效")
+        // 跳转到登录
+        next({path:'/login'})
+      }
+    },
     children:[{
       path: 'home',
       component: Home,
