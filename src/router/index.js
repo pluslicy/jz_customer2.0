@@ -50,6 +50,12 @@ const routes = [
     },{
       path: 'address',
       component: ()=>import('../views/manager/address/Index') 
+    },{
+      path: 'product_list',
+      component: ()=>import('../views/manager/product/List') 
+    },{
+      path: 'product_details',
+      component: ()=>import('../views/manager/product/Details') 
     }]
   },
   {

@@ -10,7 +10,7 @@
       </van-col>
       <van-col :span="16" :offset="2">
         <p>擦玻璃、打扫卫生、清洗空调、{{data.customerId}}</p>
-        <div>服务时间：{{data.orderTime}}</div>
+        <div>服务时间：{{data.orderTime | datefmt}}</div>
         <div v-if='data.address'>服务地址：{{data.address.province}} {{data.address.city}} {{data.address.area}} {{data.address.address}}</div>
         <div  v-if='data.address'>联系方式：{{data.address.telephone}}</div>
       </van-col>

@@ -6,7 +6,8 @@
     <!-- 栏目信息 -->
     <van-grid :column-num="3">
       <van-grid-item
-        v-for="c in categories"
+        @click="toProductListHandler(c.id,index)"
+        v-for="(c,index) in categories"
         :key="c.id"
         :icon="c.icon"
         :text="c.name"/>
@@ -36,7 +37,11 @@ export default {
   },
   methods:{
     ...mapActions('category',['findAllCategories']),
-    ...mapActions('product',['queryProduct'])
+    ...mapActions('product',['queryProduct']),
+    // 跳转到产品列表页面
+    toProductListHandler(id,activeKey){
+      this.$router.push({path:'/manager/product_list',query:{id,activeKey}})
+    }
   }
 }
 </script>

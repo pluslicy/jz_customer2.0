@@ -5,6 +5,7 @@ export default {
     orders:[]
   },
   getters:{
+    // 根据订单状态进行过滤
     ordersStatusFilter(state){
       return (status)=>{
         return state.orders.filter(order=>order.status === status)

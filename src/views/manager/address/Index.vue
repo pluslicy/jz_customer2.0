@@ -1,11 +1,6 @@
 <template>
-  <briup-fulllayout>
-    <div class="address">
-      <van-nav-bar
-        title="我的地址"
-        left-text="返回"
-        left-arrow
-        @click-left="backHandler" />
+  <briup-fulllayout title="地址列表">
+    <div class="address" >
       <div class="list">
         <briup-address-item v-for="address in addresses" :key="address.id" :data="address"></briup-address-item>
       </div>
@@ -23,9 +18,7 @@ export default {
   },
   methods:{
     ...mapActions('address',['findAllAddresses']),
-    backHandler(){
-      this.$router.go(-1)
-    }
+   
   }
 }
 </script>
