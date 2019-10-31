@@ -45,6 +45,9 @@ const routes = [
       path: 'order',
       component: Order,
     },{
+      path: 'order_confirm',
+      component: ()=>import('../views/manager/order/ConfirmOrder') 
+    },{
       path: 'user',
       component: User,
     },{

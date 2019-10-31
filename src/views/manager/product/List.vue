@@ -18,8 +18,8 @@
       </van-row>
       
       <van-row class="car">
-        <van-col :span="4">总额 <strong>￥0</strong> </van-col>
-        <van-col :offset="16" :span="4">立即下单</van-col>
+        <van-col :span="4">总额 <strong>￥{{total}}</strong> </van-col>
+        <van-col :offset="16" :span="4" @click="toConfirmOrderHandler">立即下单</van-col>
       </van-row>
       
     </div>
@@ -37,7 +37,8 @@ export default {
   computed:{
     ...mapState('category',['categories']),
     ...mapState("product",["products"]),
-    ...mapGetters('product',['productCustomerFilter'])
+    ...mapGetters('product',['productCustomerFilter']),
+    ...mapGetters('shopcar',['total'])
   },
   created(){
     // 查询所有栏目信息
@@ -50,6 +51,9 @@ export default {
   methods:{
     ...mapActions('category',['findAllCategories']),
     ...mapActions('product',['queryProduct']),
+    toConfirmOrderHandler(){
+      this.$router.push({path:'/manager/order_confirm'})
+    }
   }
 }
 </script>
